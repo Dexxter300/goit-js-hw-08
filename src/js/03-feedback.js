@@ -22,6 +22,8 @@ form.addEventListener('input', throttle((event) => {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+    messageField.value = "";
+    emailField.value = "";
     console.log(localStorage.getItem(STORAGE_NAME))
-     localStorage.removeItem(STORAGE_NAME)
+    localStorage.removeItem(STORAGE_NAME)
 })
