@@ -5,11 +5,11 @@ const throttle = require('lodash.throttle');
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 
-let info = localStorage.getItem("videoplayer-current-time");
-if (info == null) {
-    info = 0;
+let timeCode = localStorage.getItem("videoplayer-current-time");
+if (timeCode == null) {
+    timeCode = 0;
 }
-player.setCurrentTime(info);
+player.setCurrentTime(timeCode);
 
 
 player.on('timeupdate', throttle((data) => {
