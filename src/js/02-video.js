@@ -9,7 +9,6 @@ let info = localStorage.getItem("videoplayer-current-time");
 if (info == null) {
     info = 0;
 }
-console.log(info)
 player.setCurrentTime(info);
 
 
