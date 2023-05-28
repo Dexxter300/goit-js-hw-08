@@ -15,15 +15,20 @@ if (values) {
 
 form.addEventListener('input', throttle((event) => {
     localStorage.setItem(STORAGE_NAME, JSON.stringify({email: emailField.value, message: messageField.value}));
-    const test = localStorage.getItem(STORAGE_NAME)
-    console.log(test);
+    // const test = localStorage.getItem(STORAGE_NAME)
+    // console.log(test);
 }, 500))
 
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
+    if (values.message && values.email) {
+            event.preventDefault();
     messageField.value = "";
     emailField.value = "";
-    console.log(localStorage.getItem(STORAGE_NAME))
+    console.log(values)
     localStorage.removeItem(STORAGE_NAME)
+        
+    } else {
+        alert("Pls fill feedback form completely");
+    }
 })
